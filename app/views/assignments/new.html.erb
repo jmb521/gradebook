@@ -1,0 +1,21 @@
+<form action="/assignments" method="post">
+    <label for="name">Name: </label>
+    <input type="text" name="name" />
+    <br />
+    <br />
+    <label for="points_earned">Points Earned<label>
+    <input type="text" name="points_earned" />
+    <br />
+    <br />
+    <label for="points_assigned">Points Assigned</label>
+    <input type="text" name="points_assigned" />
+    <br />
+    <br />
+
+    <select name="student_name">
+        <% Student.all.each do |student| %>
+            <option value="<%= student.name %>"><%= student.name %></option>
+        <% end %>
+    </select>
+    <input type="submit" name="submit" value="Submit"/>
+</form>

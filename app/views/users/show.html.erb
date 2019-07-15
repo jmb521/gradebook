@@ -1,0 +1,8 @@
+
+<h2>My students</h2>
+<% if current_user && current_user.students.empty? %>
+    <p>You don't have any students</p>
+<% end %>
+<% current_user.students.each do |student| %>
+    <p><%= student.name %> &nbsp;&nbsp; <%= student.grade %></p>
+<% end %>
